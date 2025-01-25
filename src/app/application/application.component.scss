@@ -7,7 +7,10 @@ $--lightblue: #4560FF;
     display: flex;
     flex-direction: column;
     padding-top: 64px;
+    padding-bottom: 32px;
     gap: 32px;
+    max-width: 1920px;
+    margin: 0 auto;
 
     .__titleContainer {
         display: flex;
