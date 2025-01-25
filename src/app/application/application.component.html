@@ -1,0 +1,57 @@
+<div class="__container">
+    <div class="__titleContainer">
+      <h1>Shuffle My Team</h1>
+    </div>
+  
+    <div class="__containerBody">
+      <div class="__sectionAddPlayersToList">
+        <div class="__optionNumbers">
+          <p>Number of teams:</p>
+          <select [(ngModel)]="selectedStandardNumberForTeams">
+            <option *ngFor="let teamNumbers of optionsNumberForTeams" [value]="teamNumbers">
+              {{teamNumbers}}
+            </option>
+          </select>
+        </div>
+  
+        <div class="__inputSearch">
+          <p>Names: <span>{{playersList.length}}</span></p>
+          <div class="__inputButton">
+            <input type="text" [(ngModel)]="playerName" (keyup.enter)="addPlayerToList()" placeholder="Fill in..."/>
+            <button (click)="addPlayerToList()">+</button>
+          </div>
+        </div>
+  
+        <div class="__playersSection">
+          <div class="__playersInList">
+            <div class="__playerAndDeleteButton" *ngFor="let player of playersList; let i = index;">
+              <div class="__playerName">{{player}}</div>
+              <button (click)="deletePlayerFromList(i)">x</button>        
+            </div>
+          </div>
+          <div class="__errorMessage">{{errorMessage}}</div>
+        </div>
+  
+        <div class="__makeTeamsButton">
+          <button (click)="generateTeams()">Make teams</button>
+        </div>
+      </div>
+  
+      <div class="__generateTeams">
+        <h2>Generated Teams:</h2>
+        <div class="__teamsContainer">
+          <div class="__teamSection" *ngFor="let team of generatedTeams; let i = index">
+            <h4>Team: {{ i + 1}}</h4>
+            <div class="__playersInTeam">
+              <div *ngFor="let player of team; let i = index;">
+                {{ player }}<span *ngIf="i < team.length - 1">, </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+  
+  
+  
