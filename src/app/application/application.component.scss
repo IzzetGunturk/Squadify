@@ -1,6 +1,6 @@
-$--background-color: #0A141F;
-$--text-color: #94a7bbeb;
-$--lightblue: #4560FF;
+$--background-color: #1B1B1B;
+$--text-color: #d7dbdfeb;
+$--orange: #FF7700;
 
 
 .__container {
@@ -11,6 +11,7 @@ $--lightblue: #4560FF;
     gap: 32px;
     max-width: 1920px;
     margin: 0 auto;
+    position: relative;
 
     .__titleContainer {
         display: flex;
@@ -55,10 +56,10 @@ $--lightblue: #4560FF;
             border-radius: 20px;
             font-size: 18px;
             font-weight: 600;
-            border: 1px solid $--lightblue;
-            box-shadow: 0px 10px 20px 0px rgba(69, 96, 255, 0.1), 
-            10px 0px 20px 0px rgba(69, 96, 255, 0.1), 
-            -10px 0px 20px 0px rgba(69, 96, 255, 0.1);
+            border: 1px solid $--orange;
+            box-shadow: 0px 10px 20px 0px rgba(255, 119, 0, 0.1), 
+            10px 0px 20px 0px rgba(255, 119, 0, 0.1), 
+            -10px 0px 20px 0px rgba(255, 119, 0, 0.1);
 
             .__optionNumbers {
                 display: flex;
@@ -67,17 +68,17 @@ $--lightblue: #4560FF;
 
                 select {
                     height: 30px;
-                    background-color: #121F2D;
+                    background-color: #2b2b2b;
                     color: white;
                     border-radius: 6px;
                     border: none;
                     padding-left: 10px;
 
                     &:hover {
-                        box-shadow: 0px 10px 20px 0px rgba(69, 96, 255, 0.1), 
-                    10px 0px 20px 0px rgba(69, 96, 255, 0.1), 
-                    -10px 0px 20px 0px rgba(69, 96, 255, 0.1);
-                    transition-duration: .2s;
+                        box-shadow: 0px 10px 20px 0px rgba(255, 119, 0, 0.1), 
+                        10px 0px 20px 0px rgba(255, 119, 0, 0.1), 
+                        -10px 0px 20px 0px rgba(255, 119, 0, 0.1);
+                        transition-duration: .2s;
                     }
                 }
             }
@@ -89,7 +90,7 @@ $--lightblue: #4560FF;
                 font-size: 18px;
 
                 span {
-                    background-color: $--lightblue;
+                    background-color: $--orange;
                     color: $--background-color;
                     padding: 2px 10px;
                     border-radius: 50px;
@@ -103,36 +104,37 @@ $--lightblue: #4560FF;
 
                     input {
                         width: 100%;
-                        background-color: #121F2D;
-                        color: white;
+                        background-color: #2b2b2b;
+                        color: $--text-color;
                         border-radius: 6px;
                         border: none;
                         padding-left: 10px;
 
                         &:focus, &:hover {
-                            box-shadow: 0px 10px 20px 0px rgba(69, 96, 255, 0.1), 
-                        10px 0px 20px 0px rgba(69, 96, 255, 0.1), 
-                        -10px 0px 20px 0px rgba(69, 96, 255, 0.1);
-                        transition-duration: .2s;
+                            box-shadow: 0px 10px 20px 0px rgba(255, 119, 0, 0.1), 
+                            10px 0px 20px 0px rgba(255, 119, 0, 0.1), 
+                            -10px 0px 20px 0px rgba(255, 119, 0, 0.1);
+                            transition-duration: .2s;
                         }
 
                     }
 
                     button {
-                        background-color: $--lightblue;
-                        color: $--background-color;
-                        border: none;
+                        background-color: #ff770022;
+                        color: $--orange;
+                        border: 2px solid $--orange;
                         border-radius: 100px;
                         padding: 3px 10px;
                         font-size: 20px;
                         cursor: pointer;
 
                         &:hover {
-                            box-shadow: 0px 10px 20px 0px rgba(69, 96, 255, 0.1), 
-                        10px 0px 20px 0px rgba(69, 96, 255, 0.1), 
-                        -10px 0px 20px 0px rgba(69, 96, 255, 0.1);
-                        transition-duration: .2s;
-                        background-color: #445bee;
+                            box-shadow: 0px 10px 20px 0px rgba(255, 119, 0, 0.1), 
+                            10px 0px 20px 0px rgba(255, 119, 0, 0.1), 
+                            -10px 0px 20px 0px rgba(255, 119, 0, 0.1);
+                            transition-duration: .2s;
+                            background-color: $--orange;
+                            color: #fff;
                         }
                     }
                 }
@@ -156,9 +158,9 @@ $--lightblue: #4560FF;
                         gap: 6px;
                         align-items: center;
                         justify-content: center;
-                        background-color: #1d296c;
-                        color: #fff;
-                        border: 1px solid $--lightblue;
+                        background-color: #ff770022;
+                        color: $--text-color;
+                        border: 1px solid $--orange;
                         border-radius: 15px;
                         padding: 6px;
                         font-size: 14px;
@@ -187,9 +189,9 @@ $--lightblue: #4560FF;
                 flex-direction: column;
 
                 button {
-                    background-color: $--lightblue;
-                    color: $--background-color;
-                    border: none;
+                    background-color: #ff770022;
+                    border: 2px solid $--orange;
+                    color: $--orange;
                     padding: 10px 12px;
                     border-radius: 12px;
                     font-weight: bold;
@@ -197,11 +199,12 @@ $--lightblue: #4560FF;
                     cursor: pointer;
 
                     &:hover {
-                        box-shadow: 0px 10px 20px 0px rgba(69, 96, 255, 0.1), 
-                        10px 0px 20px 0px rgba(69, 96, 255, 0.1), 
-                        -10px 0px 20px 0px rgba(69, 96, 255, 0.1);
+                        box-shadow: 0px 10px 20px 0px rgba(255, 119, 0, 0.1), 
+                        10px 0px 20px 0px rgba(255, 119, 0, 0.1), 
+                        -10px 0px 20px 0px rgba(255, 119, 0, 0.1);
                         transition-duration: .2s;
-                        background-color: #445bee; 
+                        background-color: $--orange;
+                        color: #fff;
                     }
                 }
             }
@@ -213,10 +216,10 @@ $--lightblue: #4560FF;
             padding: 32px;
             border-radius: 20px;
             width: 100%;
-            border: 1px solid $--lightblue;
-            box-shadow: 0px 10px 20px 0px rgba(69, 96, 255, 0.1), 
-            10px 0px 20px 0px rgba(69, 96, 255, 0.1), 
-            -10px 0px 20px 0px rgba(69, 96, 255, 0.1);
+            border: 1px solid $--orange;
+            box-shadow: 0px 10px 20px 0px rgba(255, 119, 0, 0.1), 
+            10px 0px 20px 0px rgba(255, 119, 0, 0.1), 
+            -10px 0px 20px 0px rgba(255, 119, 0, 0.1);
 
             h2 {
                 padding-bottom: 8px;
@@ -228,9 +231,9 @@ $--lightblue: #4560FF;
                 gap: 16px;
 
                 .__teamSection {
-                    background-color: #1d296c;
+                    background-color: #ff770022;
                     color: #fff;
-                    border: 1px solid $--lightblue;
+                    border: 1px solid $--orange;
                     border-radius: 15px;
                     padding: 12px;
 
