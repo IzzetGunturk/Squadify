@@ -33,14 +33,14 @@ export class ApplicationComponent {
   }
 
   generateTeams() {
-    this.loadingSpinner = true;
-    setTimeout(() => {
-      if (this.playersList.length < this.selectedStandardNumberForTeams) {
-        this.errorMessage = "Not enough players..."
-      }
-      else {
+    if (this.playersList.length < this.selectedStandardNumberForTeams) {
+      this.errorMessage = "Not enough players..."
+    }
+    else {
+      this.loadingSpinner = true;
+      setTimeout(() => {
         this.shuffledList = [...this.playersList];
-  
+
         //shuffle
         for (let i = this.shuffledList.length - 1; i > 0; i--) { 
           const j = Math.floor(Math.random() * (i + 1)); 
@@ -53,13 +53,12 @@ export class ApplicationComponent {
         this.shuffledList.forEach((player, index) => {
           teams[index % this.selectedStandardNumberForTeams].push(player);
         });
-  
+
         this.generatedTeams = teams;
         this.errorMessage = "";
         this.loadingSpinner = false;
-        
-      }
-    }, 1000);
+      }, 1000);
+    }
   }
   
 
