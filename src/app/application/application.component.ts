@@ -15,6 +15,7 @@ export class ApplicationComponent {
   selectedStandardNumberForTeams: number = 2;
   generatedTeams: string[][] = [];
   loadingSpinner: boolean = false;
+  darkLightMode: boolean = false;
 
   addPlayerToList() {
     if (this.playerName == "") {
@@ -58,6 +59,17 @@ export class ApplicationComponent {
         this.errorMessage = "";
         this.loadingSpinner = false;
       }, 1000);
+    }
+  }
+
+  toggleDarkLightMode() {
+    this.darkLightMode = !this.darkLightMode;
+
+    if (this.darkLightMode) {
+      document.body.classList.add("__lightmode");
+    }
+    else {
+      document.body.classList.remove("__lightmode");
     }
   }
   
