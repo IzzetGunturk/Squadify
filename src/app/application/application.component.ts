@@ -63,7 +63,27 @@ export class ApplicationComponent {
   }
 
   toggleDarkLightMode() {
-    this.darkLightMode = !this.darkLightMode;
+    this.darkLightMode = !this.darkLightMode; //darkLightMode = DARK
+
+    localStorage.setItem("darkLightMode", JSON.stringify(this.darkLightMode));
+
+    if (this.darkLightMode) {
+      document.body.classList.add("__lightmode");
+    }
+    else {
+      document.body.classList.remove("__lightmode");
+    }
+  }
+
+  ngOnInit() {
+    const savedMode = localStorage.getItem("darkLightMode")
+
+    if (savedMode !== null) {
+      this.darkLightMode = JSON.parse(savedMode);
+    }
+    else {
+      this.darkLightMode = false;
+    }
 
     if (this.darkLightMode) {
       document.body.classList.add("__lightmode");
