@@ -52,11 +52,11 @@
     <div class="__generateTeams">
       <h2>Generated Teams:</h2>
       <div class="__teamsContainer">
-        <div class="__teamSection" *ngFor="let team of generatedTeams; let i = index">
-          <h4>Team: {{ i + 1}}</h4>
+        <div class="__teamSection" *ngFor="let team of generatedTeams; let i = index;">
+          <h4>Team: {{i + 1}}</h4>
           <div class="__playersInTeam">
             <div *ngFor="let player of team; let i = index;">
-              {{ player }}<span *ngIf="i < team.length - 1">, </span>
+              {{player}}<span *ngIf="i < team.length - 1">, </span>
             </div>
           </div>
         </div>
@@ -66,5 +66,4 @@
 </div>
 
 <app-spinner *ngIf="loadingSpinner"></app-spinner>
-
 

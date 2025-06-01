@@ -7,25 +7,26 @@ import { Component } from '@angular/core';
 })
 export class ApplicationComponent {
   
+  playerName: string = '';
   playersList: string[] = [];
-  shuffledList: string[] = [];
-  playerName: string = "";
-  errorMessage: string = "";
+  errorMessage: string = ''
+
+  shuffledList: string[] =[];
   optionsNumberForTeams: number[] = [2,3,4,5,6,7,8,9,10,11,12];
   selectedStandardNumberForTeams: number = 2;
-  generatedTeams: string[][] = [];
+  generatedTeams: string[][] = []; // 2 arrays
+
   loadingSpinner: boolean = false;
   darkLightMode: boolean = false;
 
   addPlayerToList() {
-    if (this.playerName == "") {
-      this.errorMessage = "Fill in a name";
+    if (this.playerName == '') {
+      this.errorMessage = 'Fill in a name'
     }
     else {
       this.playersList.push(this.playerName);
-      this.playerName = "";
-      console.log(this.playersList.length);
-      this.errorMessage = "";
+      this.playerName = '';
+      this.errorMessage = '';
     }
   }
 
@@ -39,25 +40,28 @@ export class ApplicationComponent {
     }
     else {
       this.loadingSpinner = true;
+
       setTimeout(() => {
         this.shuffledList = [...this.playersList];
 
-        //shuffle
+        // Fisher-Yates shuffle
         for (let i = this.shuffledList.length - 1; i > 0; i--) { 
           const j = Math.floor(Math.random() * (i + 1)); 
           [this.shuffledList[i], this.shuffledList[j]] = [this.shuffledList[j], this.shuffledList[i]];
         }
-        
+
         // making empty array of arrays (teams) of selectedStandardNumberForTeams
         const teams: string[][] = Array.from({ length: this.selectedStandardNumberForTeams }, () =>[]);
-        
-        this.shuffledList.forEach((player, index) => {
-          teams[index % this.selectedStandardNumberForTeams].push(player);
-        });
+
+        for (let i = 0; i < this.shuffledList.length; i++) { // checking each player in the list
+          const teamIndex = i % this.selectedStandardNumberForTeams; // 1%3=1 2%3=2 6%3=0 5%3=2 (remainder)
+          teams[teamIndex].push(this.shuffledList[i]); // teams[1].push('Ronaldo');
+        }
 
         this.generatedTeams = teams;
-        this.errorMessage = "";
         this.loadingSpinner = false;
+        this.errorMessage = "";
+        
       }, 1000);
     }
   }
