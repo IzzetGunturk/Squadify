@@ -111,12 +111,47 @@
                 gap: 8px;
                 font-size: 18px;
 
-                span {
-                    background-color: var(--orange);
-                    color: var(--background-color-container);
-                    padding: 2px 10px;
-                    border-radius: 50px;
-                    font-weight: bold;
+                .__titelButton {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    gap: 6px;
+
+                    span {
+                        background-color: var(--orange);
+                        color: var(--background-color-container);
+                        padding: 2px 8px;
+                        border-radius: 50px;
+                        font-weight: bold;
+                    }
+
+                    .__iconReset {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        background-color: #ff770022;
+                        color: var(--orange);
+                        border: 2px solid var(--orange);
+                        border-radius: 100px;
+                        cursor: pointer;
+                        fill: var(--orange);
+                        width: 30px;
+                        height: 30px;
+
+                        &:hover {
+                            box-shadow: 0px 10px 20px 0px rgba(255, 119, 0, 0.1), 
+                            10px 0px 20px 0px rgba(255, 119, 0, 0.1), 
+                            -10px 0px 20px 0px rgba(255, 119, 0, 0.1);
+                            transition-duration: .2s;
+                            background-color: var(--orange);
+                            color: var(--input);
+                            fill: var(--input);
+                        }
+
+                        svg {
+                            width: 20px;
+                        }
+                    }
                 }
 
                 .__inputButton {
