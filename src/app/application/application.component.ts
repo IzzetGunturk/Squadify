@@ -34,6 +34,10 @@ export class ApplicationComponent {
     this.playersList.splice(index, 1);
   }
 
+  resetList() {
+    this.playersList = [];
+  }
+
   generateTeams() {
     if (this.playersList.length < this.selectedStandardNumberForTeams) {
       this.errorMessage = "Not enough players..."
