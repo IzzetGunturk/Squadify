@@ -1,4 +1,13 @@
-# Squadify
+# 🎲 Squadify 
+
+I programmed an application where you can generate teams. 
+
+## 🛠️ Technologies
+
+- Angular
+- SCSS
+- TypeScript
+- Karma/Jasmine (unit tests)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.7.
 
