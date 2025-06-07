@@ -9,6 +9,9 @@ I programmed an application where you can generate teams.
 - TypeScript
 - Karma/Jasmine (unit tests)
 
+Containerization:
+- Docker
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.7.
 
 ## Development server
