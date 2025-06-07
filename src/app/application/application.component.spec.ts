@@ -11,7 +11,7 @@ describe('ApplicationComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ApplicationComponent],
-      imports: [FormsModule] // ⬅️ deze toevoegen
+      imports: [FormsModule]
     })
     .compileComponents();
     
