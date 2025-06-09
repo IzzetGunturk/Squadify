@@ -11,6 +11,9 @@ I programmed an application where you can generate teams.
 Unit test:
 - Karma/Jasmine
 
+CI/CD:
+- This project uses GitHub Actions for continuous integration and continuous deployment (CI/CD)
+
 Containerization:
 - Docker
 
