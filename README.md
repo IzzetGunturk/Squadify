@@ -7,7 +7,9 @@ I programmed an application where you can generate teams.
 - Angular
 - SCSS
 - TypeScript
-- Karma/Jasmine (unit tests)
+
+Unit test:
+- Karma/Jasmine
 
 Containerization:
 - Docker
