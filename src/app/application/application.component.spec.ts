@@ -100,6 +100,44 @@ describe('ApplicationComponent', () => {
     }));
   });
 
+  describe('saveGeneratedTeams()', () => {
+    beforeEach(() => {
+      component.savedTeams = [];
+    });
+
+    it('should save saved teams from the generator', () => {
+      
+      //given
+      spyOn(localStorage, 'setItem');
+      component.generatedTeams = [['Alice', 'Bob'], ['Charlie', 'David']];
+
+      // when
+      component.saveGeneratedTeams();
+
+      //then
+      expect(component.savedTeams).toEqual([[['Alice', 'Bob'],['Charlie', 'David']]]);
+      expect(component.savedTeams.length).toBe(1);
+      expect(localStorage.setItem).toHaveBeenCalledWith('savedTeams', JSON.stringify(component.savedTeams));
+    });
+  });
+
+  describe('deleteSavedTeam()', () => {
+    
+    it('should delete saved team', () => {
+      
+      //given
+      spyOn(localStorage, 'setItem');
+      component.savedTeams = [[['Alice', 'Bob'],['Charlie', 'David']], [['James', 'Mauro']] ]; // index 0 and index 1
+
+      // when
+      component.deleteSavedTeam(1);
+
+      //then
+      expect(component.savedTeams).toEqual([[['Alice', 'Bob'],['Charlie', 'David']]]);
+      expect(localStorage.setItem).toHaveBeenCalledWith('savedTeams', JSON.stringify(component.savedTeams));
+    });
+  });
+
   describe('toggleDarkLightMode()', () => {
     it('should toggle dark mode', () => {
       

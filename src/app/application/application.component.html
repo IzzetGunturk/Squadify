@@ -57,7 +57,7 @@
     </div>
 
     <div class="__generateTeams">
-      <h2>Generated Teams:</h2>
+      <h2>Generated teams:</h2>
       <div class="__teamsContainer">
         <div class="__teamSection" *ngFor="let team of generatedTeams; let i = index;">
           <h4>Team: {{i + 1}}</h4>
@@ -68,7 +68,30 @@
           </div>
         </div>
       </div>
+      <div class="__savebutton">
+        <button *ngIf="generatedTeams.length > 1" (click)="saveGeneratedTeams()">Save</button>
+      </div>
     </div>
+  </div>
+
+  <div class="__containerSavedTeams" *ngIf="savedTeams.length > 0">
+    <div class="__savedTeams">
+      <h2>Saved teams:</h2>
+      <div class="__teamsContainer" *ngFor="let teamSet of savedTeams; let i = index;">
+        <div class="__deleteButtonContainer">
+          <h4>Set: {{ i + 1 }}</h4>
+          <svg (click)="deleteSavedTeam(i)" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+          </svg>      
+        </div>
+        <div class="__teamSection" *ngFor="let teams of teamSet; let i = index;"> 
+          <h4>Team: {{ i + 1 }}</h4>
+          
+          <div class="__playerSection" *ngFor="let player of teams; let i = index;">
+            {{player}}<span *ngIf="i < teams.length - 1">, </span>
+          </div>
+        </div>
+      </div>
   </div>
 </div>
 
