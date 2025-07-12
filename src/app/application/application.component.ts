@@ -15,6 +15,7 @@ export class ApplicationComponent {
   optionsNumberForTeams: number[] = [2,3,4,5,6,7,8,9,10,11,12];
   selectedStandardNumberForTeams: number = 2;
   generatedTeams: string[][] = []; // 2 arrays
+  savedTeams: string[][][] = [];
 
   loadingSpinner: boolean = false;
   darkLightMode: boolean = false;
@@ -58,7 +59,7 @@ export class ApplicationComponent {
         const teams: string[][] = Array.from({ length: this.selectedStandardNumberForTeams }, () =>[]);
 
         for (let i = 0; i < this.shuffledList.length; i++) { // checking each player in the list
-          const teamIndex = i % this.selectedStandardNumberForTeams; // 1%3=1 2%3=2 6%3=0 5%3=2 (remainder)
+          const teamIndex = i % this.selectedStandardNumberForTeams; // a%b (what is the rest of a if you divide it by b) 1%3=1 2%3=2 6%3=0 5%3=2
           teams[teamIndex].push(this.shuffledList[i]); // teams[1].push('Ronaldo');
         }
 
@@ -68,6 +69,18 @@ export class ApplicationComponent {
         
       }, 1000);
     }
+  }
+
+  saveGeneratedTeams() {
+    this.savedTeams.push(this.generatedTeams.map(team => [...team]));
+
+    localStorage.setItem("savedTeams", JSON.stringify(this.savedTeams));
+  }
+
+  deleteSavedTeam(index: number) {
+    this.savedTeams.splice(index, 1);
+
+    localStorage.setItem("savedTeams", JSON.stringify(this.savedTeams));
   }
 
   toggleDarkLightMode() {
@@ -99,8 +112,13 @@ export class ApplicationComponent {
     else {
       document.body.classList.remove("__lightmode");
     }
-  }
-  
+
+    const savedTeamsLocalStorage = localStorage.getItem("savedTeams");
+
+    if (savedTeamsLocalStorage) {
+      this.savedTeams = JSON.parse(savedTeamsLocalStorage);
+    }
+  }  
 
   constructor() {
     
