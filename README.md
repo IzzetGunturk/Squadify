@@ -17,6 +17,13 @@ CI/CD:
 Containerization:
 - Docker
 
+<img src="src/assets/mockups/SquadifyImg.png" width="800"/>
+<img src="src/assets/mockups/SquadifyImg2.png" width="800"/>
+<img src="src/assets/mockups/SquadifyImg3.png" width="800"/>
+<img src="src/assets/mockups/SquadifyImg4.png" width="800"/>
+
+---------------------------------
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.7.
 
 ## Development server
