@@ -17,6 +17,7 @@ CI/CD:
 Containerization:
 - Docker
 
+## 📷 Images
 <img src="src/assets/mockups/SquadifyImg.png" width="800"/>
 <img src="src/assets/mockups/SquadifyImg2.png" width="800"/>
 <img src="src/assets/mockups/SquadifyImg3.png" width="800"/>
